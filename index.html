@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Love Buttons</title>
+
+<style>
+  body {
+    font-family: Georgia, serif;
+    text-align: center;
+    background: transparent;
+    padding: 20px;
+  }
+
+  .question {
+    font-size: 26px;
+    margin-bottom: 20px;
+  }
+
+  button {
+    font-size: 18px;
+    padding: 12px 28px;
+    margin: 10px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .yes {
+    background-color: #ff6fae;
+    color: white;
+  }
+
+  .no {
+    background-color: #cfd8dc;
+    color: #333;
+  }
+
+  .message {
+    margin-top: 25px;
+    font-size: 18px;
+    display: none;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+  }
+
+  .heart {
+    position: fixed;
+    bottom: -20px;
+    font-size: 24px;
+    animation: floatUp 4s linear forwards;
+  }
+
+  @keyframes floatUp {
+    0% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-800px);
+      opacity: 0;
+    }
+  }
+</style>
+</head>
+
+<body>
+
+<div class="question">do you love me too? 💗</div>
+
+<button class="yes" onclick="yesClicked()">yes dwuhhh 💗</button>
+<button class="no" onclick="noClicked()">no way jose</button>
+
+<div class="message" id="loveMessage">
+  Loving you has been the best thing that has ever happened to me.
+  In such a short time, you’ve become my comfort, my happiness, and my safest place.
+  You are my bestest friend and much more.
+  You love me in all the best ways possible and you make me feel like the luckiest girl in the world.
+  Every moment with you reminds me of why I love you so much.
+  You hold a special place in my heart.
+  Nobody could ever replace you and my love for you is unconditional.
+  I don’t know where I would be without you.
+  I am so lucky to have someone as sweet as you in my life.
+  I can’t imagine a life without you and I want to spend it with you forever.
+  My heart always feels at home with you.
+  I love you so much hassan.
+  <br><br>
+  Always yours, maliha 💗
+</div>
+
+<div class="message" id="noMessage">
+  try again boy 😌
+</div>
+
+<script>
+  function yesClicked() {
+    document.getElementById("loveMessage").style.display = "block";
+    document.getElementById("noMessage").style.display = "none";
+    createHearts();
+  }
+
+  function noClicked() {
+    document.getElementById("noMessage").style.display = "block";
+    document.getElementById("loveMessage").style.display = "none";
+  }
+
+  function createHearts() {
+    for (let i = 0; i < 25; i++) {
+      let heart = document.createElement("div");
+      heart.className = "heart";
+      heart.innerHTML = "💖";
+      heart.style.left = Math.random() * 100 + "vw";
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 4000);
+    }
+  }
+</script>
+
+</body>
+</html>
